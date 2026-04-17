@@ -42,6 +42,8 @@ github.com/quasilyte/gscene v0.0.0-20251205230841-8ff522f8557d h1:qV+93X+7SeYd93
 github.com/quasilyte/gscene v0.0.0-20251205230841-8ff522f8557d/go.mod h1:0GWl/j4N+4rfBx2pb+TFn4pnPvGz5rkWY89KrBGt2Go=
 github.com/quasilyte/gsignal v0.0.0-20240802120557-5896b3add8c1 h1:jGd8JVbr84sPP+LGFr5Iw2w1j4MowR2RQbbxwwkDccY=
 github.com/quasilyte/gsignal v0.0.0-20240802120557-5896b3add8c1/go.mod h1:qAMDDsI56AFnSrBZYG8Tj/Ys+sRsakd8Ho2be2S8Vfc=
+github.com/quasilyte/gslices v0.0.0-20251024112934-90c0414b6d07 h1:XkGPXKlcccw76Tr50q88rnEj6RTnDL4ClL09kOrdZUY=
+github.com/quasilyte/gslices v0.0.0-20251024112934-90c0414b6d07/go.mod h1:Ea1BF0zEO0kKDEXSwyiHg5i51dtnIjUk1TCWTvAHdY0=
 github.com/rivo/uniseg v0.4.7 h1:WUdvkW8uEhrYfLC4ZzdpI2ztxP1I582+49Oc5Mq64VQ=
 github.com/rivo/uniseg v0.4.7/go.mod h1:FN3SvrM+Zdj16jyLfmOkMNblXMcoc8DfTHruCPUcx88=
 golang.org/x/exp v0.0.0-20231006140011-7918f672742d h1:jtJma62tbqLibJ5sFQz8bKtEM8rJBtfilJ2qTU199MI=

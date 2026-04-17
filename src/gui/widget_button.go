@@ -46,14 +46,16 @@ func (b *Builder) loadButtonWidget() {
 }
 
 type TinyButtonConfig struct {
-	Text    string
-	OnClick func()
+	Text       string
+	OnClick    func()
+	LayoutData any
 }
 
 func (b *Builder) NewTinyButton(config TinyButtonConfig) *widget.Button {
 	return b.NewButton(ButtonConfig{
-		Text:    config.Text,
-		OnClick: config.OnClick,
+		Text:       config.Text,
+		OnClick:    config.OnClick,
+		LayoutData: config.LayoutData,
 
 		MinWidth:  24,
 		MinHeight: 24,
@@ -83,6 +85,10 @@ func (b *Builder) NewButton(config ButtonConfig) *widget.Button {
 	padding := &defaults.padding
 	options := []widget.ButtonOpt{
 		widget.ButtonOpts.Image(defaults.image),
+	}
+
+	if config.LayoutData != nil {
+		options = append(options, widget.ButtonOpts.WidgetOpts(widget.WidgetOpts.LayoutData(config.LayoutData)))
 	}
 
 	if config.Text != "" {

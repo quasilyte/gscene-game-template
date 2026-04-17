@@ -23,6 +23,7 @@ require (
 	github.com/quasilyte/gos v0.0.0-20251225064816-97cba4863cd9 // indirect
 	github.com/quasilyte/gscene v0.0.0-20251205230841-8ff522f8557d // indirect
 	github.com/quasilyte/gsignal v0.0.0-20240802120557-5896b3add8c1 // indirect
+	github.com/quasilyte/gslices v0.0.0-20251024112934-90c0414b6d07 // indirect
 	github.com/rivo/uniseg v0.4.7 // indirect
 	golang.org/x/exp v0.0.0-20250305212735-054e65f0b394 // indirect
 	golang.org/x/image v0.31.0 // indirect

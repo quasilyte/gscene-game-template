@@ -41,6 +41,7 @@ func (g *gameRunner) Update() error {
 	game.G.SceneManager.Update()
 	game.G.Audio.Update()
 	game.G.Playlist.Update(delta)
+	game.G.UI.Update(delta)
 	return nil
 }
 
@@ -87,6 +88,7 @@ func (g *gameRunner) Init() {
 	game.G.UI = gui.NewBuilder(gui.Context{
 		Loader: game.G.Loader,
 		Audio:  &game.G.Audio,
+		Input:  game.G.Input,
 	})
 	game.G.UI.Init()
 

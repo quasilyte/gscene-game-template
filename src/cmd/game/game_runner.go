@@ -24,6 +24,7 @@ func (g *gameRunner) InitContextCustom() {
 		X: 1920 / 2,
 		Y: 1080 / 2,
 	}
+	game.G.UI.ScreenSize = game.G.WindowSize
 
 	ebiten.SetWindowTitle(dat.GameTitle)
 	ebiten.SetFullscreen(true)
