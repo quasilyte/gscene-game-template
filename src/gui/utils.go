@@ -2,6 +2,7 @@ package gui
 
 import (
 	"github.com/ebitenui/ebitenui/image"
+	"github.com/ebitenui/ebitenui/widget"
 	"github.com/hajimehoshi/ebiten/v2"
 	resource "github.com/quasilyte/ebitengine-resource"
 )
@@ -30,23 +31,24 @@ func (b *Builder) loadImage(id resource.ImageID) *ebiten.Image {
 	return b.loader.LoadImage(id).Data
 }
 
-// func (b *Builder) AddTooltip(w *widget.Widget, fn func() AnyWidget) {
-// 	needRefresh := true // Need to create it first, so start with true
-// 	w.CursorExitEvent.AddHandler(func(args interface{}) {
-// 		needRefresh = true
-// 	})
-// 	tooltipPanel := b.NewPanel(PanelConfig{})
-// 	var content AnyWidget
-// 	tt := widget.NewToolTip(
-// 		widget.ToolTipOpts.Content(tooltipPanel),
-// 		widget.ToolTipOpts.ToolTipUpdater(func(c *widget.Container) {
-// 			if needRefresh {
-// 				needRefresh = false
-// 				content = fn()
-// 				c.RemoveChildren() // Make it re-entrant
-// 				c.AddChild(content)
-// 			}
-// 		}),
-// 	)
-// 	w.ToolTip = tt
-// }
+func (b *Builder) AddTooltip(w *widget.Widget, fn func() AnyWidget) {
+	needRefresh := true // Need to create it first, so start with true
+	w.CursorExitEvent.AddHandler(func(args interface{}) {
+		needRefresh = true
+	})
+
+	tooltipPanel := b.NewPanel(PanelConfig{})
+	var content AnyWidget
+	tt := widget.NewToolTip(
+		widget.ToolTipOpts.Content(tooltipPanel),
+		widget.ToolTipOpts.ToolTipUpdater(func(c widget.Containerer) {
+			if needRefresh {
+				needRefresh = false
+				content = fn()
+				c.RemoveChildren() // Make it re-entrant
+				c.AddChild(content)
+			}
+		}),
+	)
+	w.ToolTips = append(w.ToolTips, tt)
+}

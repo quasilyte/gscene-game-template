@@ -64,7 +64,7 @@ func (b *Builder) NewTinyButton(config TinyButtonConfig) *widget.Button {
 type ButtonConfig struct {
 	Text       string
 	OnClick    func()
-	Tooltip    func() AnyWidget
+	Tooltip    string
 	MinWidth   int
 	MinHeight  int
 	Font       *text.Face
@@ -105,39 +105,24 @@ func (b *Builder) NewButton(config ButtonConfig) *widget.Button {
 		options = append(options, widget.ButtonOpts.WidgetOpts(widget.WidgetOpts.MinSize(config.MinWidth, config.MinHeight)))
 	}
 
-	// if config.Tooltip != nil {
-	// 	needRefresh := true // Need to create it first, so start with true
-	// 	options = append(options, widget.ButtonOpts.WidgetOpts(
-	// 		widget.WidgetOpts.CursorExitHandler(func(args *widget.WidgetCursorExitEventArgs) {
-	// 			needRefresh = true
-	// 		}),
-	// 	))
-	// 	tooltipPanel := b.NewPanel(PanelConfig{})
-	// 	var content AnyWidget
-	// 	tt := widget.NewToolTip(
-	// 		widget.ToolTipOpts.Content(tooltipPanel),
-	// 		widget.ToolTipOpts.ToolTipUpdater(func(c *widget.Container) {
-	// 			if needRefresh {
-	// 				needRefresh = false
-	// 				content = config.Tooltip()
-	// 				c.RemoveChildren() // Make it re-entrant
-	// 				c.AddChild(content)
-	// 			}
-	// 		}),
-	// 	)
-	// 	options = append(options, widget.ButtonOpts.WidgetOpts(
-	// 		widget.WidgetOpts.ToolTip(tt),
-	// 	))
-	// }
-
 	buttonWidget := widget.NewButton(options...)
+
+	if config.Tooltip != "" {
+		b.AddTooltip(buttonWidget.GetWidget(), func() AnyWidget {
+			return b.NewText(TextConfig{
+				Text: config.Tooltip,
+				Font: assets.FontTiny,
+			})
+		})
+	}
+
 	return buttonWidget
 }
 
 type IconButtonConfig struct {
 	Icon       *ebiten.Image
 	OnClick    func()
-	Tooltip    func() AnyWidget
+	Tooltip    string
 	MinWidth   int
 	MinHeight  int
 	Font       *text.GoXFace

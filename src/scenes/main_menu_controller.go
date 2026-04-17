@@ -74,6 +74,7 @@ func (c *MainMenuController) initUI() {
 			OnClick: func() {
 				game.ChangeScene(NewCreditsController())
 			},
+			Tooltip: "Unlocks a secret ending",
 		})
 		panelRows.AddChild(b)
 	}
