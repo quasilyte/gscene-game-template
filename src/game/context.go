@@ -2,7 +2,6 @@ package game
 
 import (
 	"mygame/assets"
-	"mygame/dat"
 	"mygame/gui"
 	"mygame/viewport"
 
@@ -41,8 +40,6 @@ type GlobalContext struct {
 	Loader *resource.Loader
 
 	Rand gmath.Rand
-
-	Content *dat.Content
 
 	UI *gui.Builder
 

@@ -20,10 +20,10 @@ type buttonDefaults struct {
 }
 
 func (b *Builder) loadButtonWidget() {
-	disabled := b.loadNineSlicedImage("image/gui/button_disabled.png", 5, 5)
-	idle := b.loadNineSlicedImage("image/gui/button_idle.png", 5, 5)
-	hover := b.loadNineSlicedImage("image/gui/button_hover.png", 5, 5)
-	pressed := b.loadNineSlicedImage("image/gui/button_pressed.png", 5, 5)
+	disabled := b.loadNineSlicedImage(assets.ImageUIButtonDisabled, 5, 5)
+	idle := b.loadNineSlicedImage(assets.ImageUIButtonIdle, 5, 5)
+	hover := b.loadNineSlicedImage(assets.ImageUIButtonHover, 5, 5)
+	pressed := b.loadNineSlicedImage(assets.ImageUIButtonPressed, 5, 5)
 	buttonPadding := widget.Insets{
 		Left:   8,
 		Right:  8,

@@ -1,8 +1,6 @@
 package gui
 
 import (
-	"mygame/dat"
-
 	"github.com/ebitenui/ebitenui"
 	"github.com/ebitenui/ebitenui/widget"
 	resource "github.com/quasilyte/ebitengine-resource"
@@ -18,9 +16,8 @@ type Builder struct {
 	button *buttonDefaults
 	panel  *panelDefaults
 
-	content *dat.Content
-	loader  *resource.Loader
-	audio   *sound.System
+	loader *resource.Loader
+	audio  *sound.System
 
 	object *SceneObject
 }
@@ -28,16 +25,13 @@ type Builder struct {
 type Context struct {
 	Loader *resource.Loader
 
-	Content *dat.Content
-
 	Audio *sound.System
 }
 
 func NewBuilder(ctx Context) *Builder {
 	b := &Builder{
-		loader:  ctx.Loader,
-		audio:   ctx.Audio,
-		content: ctx.Content,
+		loader: ctx.Loader,
+		audio:  ctx.Audio,
 	}
 	return b
 }

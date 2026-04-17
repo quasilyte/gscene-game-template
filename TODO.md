@@ -3,6 +3,3 @@
   - remove old tooltip configs
 - make sure eui toolkit is adequate
   - hseparator with size
-- wasm builder/exporter
-  - make sure wasm works with dynamic data
-- settings for sound options

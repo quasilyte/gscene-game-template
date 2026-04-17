@@ -1,6 +1,8 @@
 package gui
 
 import (
+	"mygame/assets"
+
 	"github.com/ebitenui/ebitenui/image"
 	"github.com/ebitenui/ebitenui/widget"
 )
@@ -11,7 +13,7 @@ type panelDefaults struct {
 }
 
 func (b *Builder) loadPanelWidget() {
-	idle := b.loadNineSlicedImage("image/gui/panel.png", 5, 5)
+	idle := b.loadNineSlicedImage(assets.ImageUIPanel, 5, 5)
 	b.panel = &panelDefaults{
 		image: idle,
 		padding: widget.Insets{

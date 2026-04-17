@@ -21,13 +21,13 @@ func nineSliceImage(i *ebiten.Image, offsetX, offsetY int) *image.NineSlice {
 	)
 }
 
-func (b *Builder) loadNineSlicedImage(path string, offsetX, offsetY int) *image.NineSlice {
-	i := b.loader.LoadImage(b.content.Images[path]).Data
+func (b *Builder) loadNineSlicedImage(id resource.ImageID, offsetX, offsetY int) *image.NineSlice {
+	i := b.loader.LoadImage(id).Data
 	return nineSliceImage(i, offsetX, offsetY)
 }
 
-func (b *Builder) loadImage(path string) *ebiten.Image {
-	return b.loader.LoadImage(b.content.Images[path]).Data
+func (b *Builder) loadImage(id resource.ImageID) *ebiten.Image {
+	return b.loader.LoadImage(id).Data
 }
 
 // func (b *Builder) AddTooltip(w *widget.Widget, fn func() AnyWidget) {

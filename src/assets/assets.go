@@ -3,7 +3,6 @@ package assets
 import (
 	"embed"
 	"io"
-	"os"
 	"path/filepath"
 	"strings"
 
@@ -34,10 +33,6 @@ func MakeOpenAssetFunc(gamedataFolder string) func(path string) io.ReadCloser {
 		}
 		return f
 	}
-}
-
-func openfile(path string) (io.ReadCloser, error) {
-	return os.Open(path)
 }
 
 func RegisterResources(l *resource.Loader) {

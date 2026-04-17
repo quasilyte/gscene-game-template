@@ -11,10 +11,6 @@ import (
 	resource "github.com/quasilyte/ebitengine-resource"
 )
 
-// <<edit>> If you have some special files, you may need to
-// adjust this loader code.
-// You will need to add those to Content too.
-
 type Content struct {
 	Images  map[string]resource.ImageID
 	Audio   map[string]resource.AudioID

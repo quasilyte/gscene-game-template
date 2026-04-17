@@ -33,6 +33,3 @@ What is provided:
 To help you with code navigation, here are a few things to search for (`ctrl+shift+f`):
 
 * `<<edit>>` - the first-priority edits, for every game
-
-There are two ways to include game contents (sounds, images): embedded and dynamic. For embedded storage, see [image_resources.go](src/assets/image_resources.go), etc.
-For dynamically loaded resources, put the files under `game_data` folder. You may need to adjust the resource loading, but the most basic stuff is already there.
