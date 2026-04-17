@@ -5,6 +5,7 @@ import (
 	"mygame/gui"
 	"mygame/viewport"
 
+	graphics "github.com/quasilyte/ebitengine-graphics"
 	input "github.com/quasilyte/ebitengine-input"
 	resource "github.com/quasilyte/ebitengine-resource"
 	sound "github.com/quasilyte/ebitengine-sound"
@@ -73,4 +74,10 @@ func (ctx *GlobalContext) AdjustVolumeLevels() {
 func (ctx *GlobalContext) AdjustMusic() {
 	ctx.Playlist.SetPaused(true)
 	ctx.Playlist.SetPaused(false)
+}
+
+func (ctx *GlobalContext) NewSprite(id resource.ImageID) *graphics.Sprite {
+	spr := graphics.NewSprite()
+	spr.SetImage(ctx.Loader.LoadImage(id).Data)
+	return spr
 }

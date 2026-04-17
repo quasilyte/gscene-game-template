@@ -38,6 +38,7 @@ func MakeOpenAssetFunc(gamedataFolder string) func(path string) io.ReadCloser {
 func RegisterResources(l *resource.Loader) {
 	registerImageResources(l)
 	registerAudioResources(l)
+	registerShaderResources(l)
 }
 
 func VolumeMultiplier(level int) float64 {

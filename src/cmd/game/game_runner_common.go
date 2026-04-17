@@ -39,7 +39,6 @@ func (g *gameRunner) Update() error {
 	}
 
 	game.G.SceneManager.Update()
-	game.G.UI.Update(delta)
 	game.G.Audio.Update()
 	game.G.Playlist.Update(delta)
 	return nil

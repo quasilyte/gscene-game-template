@@ -52,6 +52,8 @@ func (c *MainMenuController) initUI() {
 	panelRows.AddChild(game.G.UI.NewButton(gui.ButtonConfig{
 		Text: "Play",
 		OnClick: func() {
+			back := NewMainMenuController()
+			game.ChangeScene(NewTestController(back))
 		},
 	}))
 

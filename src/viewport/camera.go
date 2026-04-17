@@ -50,6 +50,10 @@ func NewCamera(config CameraConfig) *Camera {
 	}
 }
 
+func (c *Camera) SetBounds(b gmath.Rect) {
+	c.c.SetBounds(b)
+}
+
 func (c *Camera) ToScreenRect(worldRect gmath.Rect) gmath.Rect {
 	return gmath.Rect{
 		Min: c.ToScreenPos(worldRect.Min),

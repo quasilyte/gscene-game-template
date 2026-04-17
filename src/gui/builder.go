@@ -63,6 +63,7 @@ func (b *Builder) BuildAt(scene *gscene.Scene, root *widget.Container, layer int
 
 	b.object = newSceneObject(anchor)
 	scene.AddGraphics(b.object, layer)
+	scene.AddObject(b.object)
 
 	return b.object.ui
 }
